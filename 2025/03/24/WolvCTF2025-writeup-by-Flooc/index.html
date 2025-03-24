@@ -155,22 +155,22 @@
 <h2 id="REdata-Rev"><a href="#REdata-Rev" class="headerlink" title="REdata - Rev"></a>REdata - Rev</h2><p>字符串窗口里看到flag</p>
 <h1 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h1><h2 id="CrackMeEXE"><a href="#CrackMeEXE" class="headerlink" title="CrackMeEXE"></a>CrackMeEXE</h2><p>首先有个upx5.0的壳，去github上download一下编译的版本，直接<code>upx -d</code></p>
 <p>IDA载入发现有反调试，nop掉后动调，运行时写入的代码，在WriteProcessMemory后下断点，它的返回值就是分配的内存的地址，在debug段，生成函数：</p>
-<img src="/2025/03/24/WolvCTF2025-writeup-by-Flooc/image-20250322095412017.png" class="" title="image-20250322095412017">
+<img src="/2025/03/24/WolvCTF2025-writeup-by-Flooc/03/24/WolvCTF2025-writeup-by-Flooc/image-20250322095412017.png" class title="image-20250322095412017">
 
 <p>简单异或：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cipher = [0x11, 0x0F, 0x15, 0x01, 0x1D, 0x2D, 0x0F, 0x09,</span><br><span class="line">          0x56, 0x15, 0x52, 0x03, 0x39, 0x35, 0x52, 0x13,</span><br><span class="line">          0x59, 0x11, 0x00, 0x00]</span><br><span class="line">tab = &quot;flag&quot;</span><br><span class="line"></span><br><span class="line">for i in range(len(cipher)):</span><br><span class="line">    print(chr(cipher[i] ^ ord(tab[i % 4])),end=&#x27;&#x27;)</span><br></pre></td></tr></table></figure>
 
-<img src="/2025/03/24/WolvCTF2025-writeup-by-Flooc/image-20250322095442647.png" class="" title="image-20250322095442647">
+<img src="/2025/03/24/WolvCTF2025-writeup-by-Flooc/03/24/WolvCTF2025-writeup-by-Flooc/image-20250322095442647.png" class title="image-20250322095442647">
 
 <p>程序之后还有一处输入passwd的地方，随便输几个字符后将rax改成大于0x14的数，然后会报这个错，不知道为什么之后再说吧！</p>
-<img src="/2025/03/24/WolvCTF2025-writeup-by-Flooc/image-20250322095716113.png" class="" title="image-20250322095716113">
+<img src="/2025/03/24/WolvCTF2025-writeup-by-Flooc/03/24/WolvCTF2025-writeup-by-Flooc/image-20250322095716113.png" class title="image-20250322095716113">
 
 <h2 id="Irregularity"><a href="#Irregularity" class="headerlink" title="Irregularity"></a>Irregularity</h2><p>这道题是js的正则，比较复杂，看的头晕眼花，真折磨人啊！</p>
 <p>因为不太会，一开始是将整个正则分成一部分一部分的看，类似这样，把捕获组号标清楚：</p>
-<img src="/2025/03/24/WolvCTF2025-writeup-by-Flooc/image-20250323152530202.png" class="" title="image-20250323152530202">
+<img src="/2025/03/24/WolvCTF2025-writeup-by-Flooc/03/24/WolvCTF2025-writeup-by-Flooc/image-20250323152530202.png" class title="image-20250323152530202">
 
 <p>后面找到一个用来分析正则的在线网站  <a target="_blank" rel="noopener" href="https://www.mklab.cn/utils/regex">MK</a>，匹配成功的话会在下面显示捕获组号和内容，还是很有用的！效果如下：</p>
-<img src="/2025/03/24/WolvCTF2025-writeup-by-Flooc/image-20250323152247304.png" class="" title="image-20250323152247304">
+<img src="/2025/03/24/WolvCTF2025-writeup-by-Flooc/03/24/WolvCTF2025-writeup-by-Flooc/image-20250323152247304.png" class title="image-20250323152247304">
 
 <p>每分析完一部分就把这部分加进来，其他部分在其他的js验证网站上完成，最后耗时差不多三个小时？？</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wctf&#123;r3gul4r_3xpr35510n5_m0r3_l1k3_1rr3gul4r_3xpr355i0ns_smh_QOKUEfzi49TCzbLr&#125;</span><br></pre></td></tr></table></figure>
@@ -185,14 +185,14 @@
 <p>脚本使用z3解ptr，输了四次1，才使方程有解，接出来ptr后算一下还差多少到总数</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">from z3 import *</span><br><span class="line"></span><br><span class="line">x = BitVec(&quot;x&quot;, 8)</span><br><span class="line">s = Solver()</span><br><span class="line"></span><br><span class="line">s.add(x &amp; 0xA == 0)</span><br><span class="line">s.add(x &amp; 0x28 == 0)</span><br><span class="line">s.add(x &amp; 0xA8 == 0)</span><br><span class="line">s.add(x &amp; 0x60 == 0)</span><br><span class="line">s.add((x ^ 1347) &amp; 0x28 == 0)</span><br><span class="line">s.add((x ^ 1347) &amp; 0xA8 == 0)</span><br><span class="line">s.add((x ^ 1347 ^ 1357) &amp; 0x60 == 0)</span><br><span class="line">s.add((x ^ 1347 ^ 1357 ^ 1367) &amp; 0x16 == 0)</span><br><span class="line"></span><br><span class="line">if s.check() == sat:</span><br><span class="line">    print(s.model())</span><br><span class="line"></span><br><span class="line">print(16 * 0x101 - 1377)</span><br></pre></td></tr></table></figure>
 
-<img src="/2025/03/24/WolvCTF2025-writeup-by-Flooc/image-20250323214548037.png" class="" title="image-20250323214548037">
+<img src="/2025/03/24/WolvCTF2025-writeup-by-Flooc/03/24/WolvCTF2025-writeup-by-Flooc/image-20250323214548037.png" class title="image-20250323214548037">
 
-<img src="/2025/03/24/WolvCTF2025-writeup-by-Flooc/image-20250323214228908.png" class="" title="image-20250323214228908">
+<img src="/2025/03/24/WolvCTF2025-writeup-by-Flooc/03/24/WolvCTF2025-writeup-by-Flooc/image-20250323214228908.png" class title="image-20250323214228908">
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wctf&#123;r4nD0m_bUt_N0t_53Cr3t_84a5&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="osint"><a href="#osint" class="headerlink" title="osint"></a>osint</h1><h2 id="wintery"><a href="#wintery" class="headerlink" title="wintery"></a>wintery</h2><p>用google map和黑色背景黄色M的旗帜可以看出是密西根大学的Michigan Union建筑：</p>
-<img src="/2025/03/24/WolvCTF2025-writeup-by-Flooc/image-20250322140722081.png" class="" title="image-20250322140722081">
+<img src="/2025/03/24/WolvCTF2025-writeup-by-Flooc/03/24/WolvCTF2025-writeup-by-Flooc/image-20250322140722081.png" class title="image-20250322140722081">
 
 <p>看这个附件的角度，以及大小，拍摄地点应该不会离太远，并且可能在西南面</p>
 <p>根据hint，把可能的数都试了，都不对，没有头猪了</p>
