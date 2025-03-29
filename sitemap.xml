@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://flooc.xyz/baidu_verify_codeva-zzDQVzjA1S.html</loc>
+    
+    <lastmod>2025-03-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://flooc.xyz/2025/03/24/WolvCTF2025-writeup-by-Flooc/</loc>
     
     <lastmod>2025-03-24</lastmod>
@@ -101,13 +110,6 @@
 
   
   <url>
-    <loc>https://flooc.xyz/tags/reverse/</loc>
-    <lastmod>2025-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://flooc.xyz/tags/ctf/</loc>
     <lastmod>2025-03-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -115,7 +117,21 @@
   </url>
   
   <url>
+    <loc>https://flooc.xyz/tags/reverse/</loc>
+    <lastmod>2025-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://flooc.xyz/tags/ubuntu/</loc>
+    <lastmod>2025-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://flooc.xyz/tags/flareon/</loc>
     <lastmod>2025-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -163,13 +179,6 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://flooc.xyz/tags/flareon/</loc>
-    <lastmod>2025-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
@@ -194,20 +203,6 @@
   </url>
   
   <url>
-    <loc>https://flooc.xyz/categories/hexo/</loc>
-    <lastmod>2025-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://flooc.xyz/categories/%E8%AF%BE%E8%AE%BE%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2025-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://flooc.xyz/categories/%E7%AB%9E%E8%B5%9B%E9%A2%98%E8%A7%A3/</loc>
     <lastmod>2025-03-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -215,7 +210,21 @@
   </url>
   
   <url>
+    <loc>https://flooc.xyz/categories/hexo/</loc>
+    <lastmod>2025-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://flooc.xyz/categories/%E7%AB%9E%E8%B5%9B%E9%A2%98%E8%A7%A3/flareon/</loc>
+    <lastmod>2025-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://flooc.xyz/categories/%E8%AF%BE%E8%AE%BE%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2025-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
